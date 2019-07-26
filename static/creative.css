@@ -1,0 +1,56 @@
+.post{
+	display:block;
+	border:solid 1px #ddd;
+	background-color:#eee;
+	padding:10px;
+	clear:right;
+	text-decoration:none;
+	color:#000;
+	margin:0 0 5px;
+}
+.post:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+.post:hover{
+	background-color:#ccc;
+}
+.post img{
+	float:right;
+    width:75px;
+    height:auto;
+}
+.post h3{
+    float:left;
+    width:240px;
+    font-weight:normal;
+    font-size:20px;
+    margin:0 10px 0 0;
+    padding: 0;
+}
+.container{
+    margin:20px auto;
+    width:930px;
+}
+.container:after {
+   content: "";
+   clear: both;
+   display: table;
+}
+.hero {
+    display:block;
+    width:540px;
+    float:left;
+}
+.sidebar{
+    width:370px;
+    margin-left:20px;
+    float:left;    
+}
+.sidebar h2{
+    margin-top:0 !important;
+    font-size:20px !important;
+    font-weight:normal !important;
+    font-family:sans-serif !important;
+}

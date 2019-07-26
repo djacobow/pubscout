@@ -1,0 +1,186 @@
+
+body {
+    background-color: #f0f0f0;
+    color: rgb(0,52,77);
+    font-family: Verdana, Arial, sans-serif;
+}
+
+a {
+    color: #007681;
+    text-decoration: none;
+}
+a:link {
+    color: #007681;
+}
+a:visited {
+    color: #007681;
+}
+a:hover {
+    color: #00b1c1;
+    {text-shadow:0px 0px 1px #00b1c1;}
+    /* font-weight: bold; */
+}
+a:active {
+    color: #00b1c1;
+    {text-shadow:0px 0px 1px #00b1c1;}
+}
+
+table.pubs_table,
+table.highlighted_pubs_table,
+table.professional_table,
+table.degrees_table,
+table.appointments_table,
+table.jobs_table,
+table.certifications_table,
+table.websites_table,
+table.group_subgroup_list {
+    width: 85%;
+    text-align: left;
+    margin: auto;
+    border: 0px;
+    border-collapse: collapse;
+    background-color: #d0d0d0;
+}
+
+table.pubs_table th, table.pubs_table td,
+table.highlighted_pubs_table th, table.highlighted_pubs_table td,
+table.professional_table th, table.professional_table td,
+table.degrees_table th, table.degrees_table td,
+table.appointments_table th, table.appointments_table td,
+table.jobs_table th, table.jobs_table td,
+table.websites_table th, table.websites_table td,
+table.certifications_table th, table.certifications_table td,
+table.group_subgroup_list th, table.group_subgroup_list td {
+    border-bottom: 1px solid #202020;
+    padding: 4px 4px 10px 10px;
+}
+
+table.pubs_table tr,
+table.highlighted_pubs_table tr,
+table.professional_table tr,
+table.degrees_table tr,
+table.websites_table tr,
+table.certifications_table tr,
+table.jobs_table tr,
+table.group_subgroup_list tr {
+    vertical-align: top;
+    border: 0px;
+}
+
+span.title,
+span.profa_title,
+span.appt_org,
+span.school_org,
+span.nonacademic_job_org,
+span.profa_descr {
+    font-weight: bold;
+}
+
+span.journal, 
+span.profa_institution {
+    font-size: 90%;
+}
+span.authors {
+    font-size: 80%;
+}
+span.volume, 
+span.lbnl_id, 
+span.pub_type, 
+span.issue, 
+span.pub_date, 
+span.profa_date, 
+span.symplectic_link, 
+span.eschol,
+span.ostiyr,
+span.claimed_by, 
+span.awaiting_claimed_by, 
+span.coauthors, 
+span.deposit_date,
+span.funding_linked_date,
+span.funding_source,
+span.profa_event_type,
+span.profa_type,
+span.hidden_by,
+span.favorited_by,
+span.citation_counts,
+span.abstract_controller,
+span.doi {
+    font-size: 70%;
+}
+
+div.icon_holder table {
+    width: auto;
+    text-align: left;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border: 0px;
+    border-collapse: collapse;
+    padding: 0px;
+}
+div.icon_holder table th,
+div.icon_holder table td {
+    padding: 2px 4px 0px 0px;
+    margin: 0px;
+    border: 0px;
+    font-size: 20%;
+}
+div.icon_holder table td img {
+    vertical-align: middle !important;
+}
+div.icon_holder table tr {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+div.icon_holder table td.crazy {
+    height: 0px;
+}
+
+a.website_url {
+    font-weight: bold;
+}
+
+td.compliance_ok {
+    background-color: #74aa50;
+}
+td.compliance_not_ok {
+    background-color: #e04e39;
+}
+td.compliance_user_na {
+    background-color: #e0e040;
+}
+td.compliance_na {
+}
+
+span.user_info {
+    font-size: 50%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+div.no_script {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    top:45%;
+    font-weight: bold;
+    font-size: 200%;
+    background-color: white;
+    color: black;
+}

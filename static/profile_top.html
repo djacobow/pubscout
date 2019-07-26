@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Berkeley Lab Profiles</title>
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/creative.css">
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/base.css">
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/profile.css">
+        <meta name="description" content="Berkeley Lab Profiles">
+        <meta name="keywords" content="LBL,LBNL,Berkeley Lab,Lawrence Berkeley National Lab,Profiles,Public Profiles">
+        <meta name="robots" content="index,follow">
+    </head>
+    <body>
+        <noscript>
+            <div class="no_script">
+                We're sorry, Javascript is required to use this site.
+            </div>
+        </noscript>
+        <input id="starting_search" type="hidden" value="___null_search___">
+        <header>
+            <div id="banner">
+                <table class="banner">
+                    <tr>
+                        <td rowspan="2"><img class="logo_png" src="/scout/app/static/lab_logo.png"></td>
+                        <td class="logo_text_1">Researcher Profiles</td>
+                    </tr>
+                    <tr>
+                        <td class="logo_text_2"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="creative" class="creative">
+                <div class="container">
+                    <img class='hero'>
+                    <div class="sidebar">
+                    <div id="news"></div>
+                </div>
+            </div>
+
+            <div class="nd_not_ready" id="person_search_div">Please wait for initialization.</div>
+            <div class="nd_not_ready" id="division_search_div">Please wait for initialization.</div>
+            <div class="nd_not_ready" id="area_search_div">Please wait for initialization.</div>
+            <div id="keyword_search_div">
+                <a href="/scout/app/kw">Or search for LBL Publcations by keyword</a>
+            </div>
+
+        </header>
+        <main>
+            <div id="pubs_div"></div>
+        </main>
+        <footer>
+            <div id="footer">Questions? Contact publications@lbl.gov</div>
+        </footer>
+        <script type="text/javascript" src="/scout/app/static/shared.js"></script>
+        <script type="text/javascript" src="/scout/app/static/entitypicker.js"></script>
+        <script type="text/javascript" src="/scout/app/static/profile_top.js"></script>
+        <script type="text/javascript" src="/scout/app/static/creative.js"></script>
+        <script type="text/javascript">
+            var m = window.location.pathname.match(/profiles\/([\w\.-]+)\/?$/);
+            if (m) document.getElementById('starting_search').value = m[1];
+            init();
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,189 @@
+<html>
+    <head>
+        <title>Pubs by User</title>
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/base.css">
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/scout.css">
+    </head>
+    <body>
+        <div id="wait_box" class="wait_box">Just a moment...</div>
+        <input id="starting_search" type="hidden" value="___null_search___">
+        <header>
+            <div id="banner">
+                <table class="banner">
+                    <tr>
+                        <td rowspan="2"><img class="logo_png" src="/scout/app/static/lab_logo.png"></td>
+                        <td class="logo_text_1">PubScout</td>
+                    </tr>
+                    <tr>
+                        <td class="logo_text_2">Publications Tracker</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="nd_not_ready" id="group_search_div">Please wait for initialization.</div>
+
+            <div id="filter_div">
+                <table>
+                    <tr>
+                        <td>OA Applicability:</td>
+                        <td>
+                            <select id="filt_oa">
+                                <option value="in">in</option>
+                                <option value="out">out</option>
+                                <option value="any" selected="selected">any</option>
+                            </select>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>Deposit Status</td>
+                        <td>
+                            <select id="filt_dep">
+                                <option value="not_deposited">not deposited</option>
+                                <option value="deposited">deposited</option>
+                                <option value="any" selected="selected">any</option>
+                            </select>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>Funding Status</td>
+                        <td>
+                            <select id="filt_link">
+                                <option value="not_linked">not linked</option>
+                                <option value="linked">linked</option>
+                                <option value="any" selected="selected">any</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OSTI Year</td>
+                        <td>
+                            <select id="filt_ostiyr">
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="any_OSTI">any OSTI Year</option>
+                                <option value="not_OSTI">NOT OSTI</option>
+                                <option value="any" selected="selected">no filter</option>
+                            </select>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>Claimed Status</td>
+                        <td>
+                            <select id="filt_claimed">
+                                <option value="not_claimed">not claimed</option>
+                                <option value="claimed" selected="selected">claimed</option>
+                                <option value="any">any</option>
+                            </select>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>Excluded by User</td>
+                        <td>
+                            <select id="filt_excluded">
+                                <option value="excluded">Excluded</option>
+                                <option value="not_excluded">Not Excluded</option>
+                                <option value="any" selected="selected">any</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Claimed Vintage</td>
+                        <td>
+                            <select id="filt_claimed_age">
+                                <option value="0" selected="selected">Ever or Not</option>
+                                <option value="1d">Yesterday</option>
+                                <option value="7d">Last week</option>
+                                <option value="30d">Last 30 days</option>
+                                <option value="90d">Last 90 days</option>
+                                <option value="1y">Last year</option>
+                                <option value="2y">Last 2 years</option>
+                            </select>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>Deposit Vintage</td>
+                        <td>
+                            <select id="filt_deposit_age">
+                                <option value="0" selected="selected">Ever or Not</option>
+                                <option value="1d">Yesterday</option>
+                                <option value="7d">Last week</option>
+                                <option value="30d">Last 30 days</option>
+                                <option value="90d">Last 90 days</option>
+                                <option value="1y">Last year</option>
+                                <option value="2y">Last 2 years</option>
+                            </select>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>Funding Link Vintage</td>
+                        <td>
+                            <select id="filt_flink_age">
+                                <option value="0" selected="selected">Ever or Not</option>
+                                <option value="1d">Yesterday</option>
+                                <option value="7d">Last week</option>
+                                <option value="30d">Last 30 days</option>
+                                <option value="90d">Last 90 days</option>
+                                <option value="1y">Last year</option>
+                                <option value="2y">Last 2 years</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sort</td>
+                        <td>
+                            <select id="list_sort">
+                                <option value="pub_date_f" selected="selected">Publication Date</option>
+                                <option value="pub_date_r">Reverse Publication Date</option>
+                                <option value="title_alpha">Title Alphabetic</option>
+                                <option value="journal_alpha">Journal Alphabetic</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </header>
+        <main>
+            <div id="pubs_div"></div>
+        </main>
+        <footer>
+            <div id="footer">
+                <table width="100%">
+                    <tr>
+                        <td style="text-align: left;">2018-19 Lawrence Berkeley National Laboratory</td>
+                        <td style="text-align: right;">Questions / Issues? Contact <a href="mailto:publications@lbl.gov">publications.lbl.gov</a></td>
+                    </tr>
+                </table>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            var global_entity_name = 'User';
+            var global_entity_type = 'user';
+            var path = window.location.pathname;
+            if (path.match('scoutArea')) {
+                global_entity_name = 'Area';
+                global_entity_type = 'area';
+                document.getElementsByTagName('title')[0].innerText = 'Pubs by Area';
+            } else if (path.match('scoutDivision')) {
+                global_entity_name = 'Division';
+                global_entity_type = 'division';
+                document.getElementsByTagName('title')[0].innerText = 'Pubs by Division';
+            } else if (path.match('scoutAll')) {
+                global_entity_name = 'All';
+                global_entity_type = 'all';
+            }
+            var m = path.match(/scout\w+\/([\w\.-]+)\/?$/);
+            if (m) document.getElementById('starting_search').value = m[1];
+        </script>
+        <script type="text/javascript" src="/scout/app/static/shared.js"></script>
+        <script type="text/javascript" src="/scout/app/static/bagtodom.js"></script>
+        <script type="text/javascript" src="/scout/app/static/scoutpublist.js"></script>
+        <script type="text/javascript" src="/scout/app/static/entitypicker.js"></script>
+        <script type="text/javascript" src="/scout/app/static/exporter.js"></script>
+        <script type="text/javascript">
+            jsLoad('/scout/app/static/scout_' + 
+                   (global_entity_type == 'all' ? 'all_deposited' :
+                    global_entity_type == 'user' ? 'user' :
+                    'division')
+                   + '.js',
+                   (ev) => {
+                init();
+            });
+        </script>
+    </body>
+</html>
+

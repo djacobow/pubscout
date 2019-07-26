@@ -1,0 +1,16 @@
+[Unit]
+Description=Berkeley Lab Publications Scout 
+
+[Service]
+Type=simple
+Restart=always
+User=dgj
+Group=dgj
+RestartSec=10
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+WorkingDirectory=/home/dgj/projects/library/scout
+ExecStart=/home/dgj/.nvm/versions/node/v10.7.0/bin/node /home/dgj/projects/library/scout/profile_server.js
+
+[Install]
+WantedBy=multi-user.target
+

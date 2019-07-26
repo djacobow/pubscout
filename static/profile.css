@@ -1,0 +1,303 @@
+    
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+header {
+    /* min-height: 175px; */
+    height: 10%;
+    flex-shrink: 0;
+    margin-top: 10px;
+    margin-right: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+table.banner {
+    width: 100%;
+    border-bottom: 2px solid rgb(0,62,90);
+}
+table.banner td { 
+    vertical-align: middle;
+}
+img.logo_png {
+    /* actual size: 586x96 */
+    width: 440px;
+    height: 72px;
+}
+td.logo_text_1 {
+    font-weight: bold;
+    font-size: 145%;
+    vertical-align: bottom
+}
+td.logo_text_2 {
+    vertical-align: top 
+
+}
+main { 
+   flex: auto;
+   flex-grow: 1;
+   overflow: auto;
+   margin-right: 10px;
+}
+
+div#pubs_div {
+    flex: auto;
+    flex-grow: 1;
+    margin: 10px;
+    overflow: auto;
+}
+
+footer {
+    font-size: 75%;
+    flex-shrink: 1;
+    /* padding: 5px; */
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-top: 20px;
+    color: #f0f0f0;
+    background-color: rgb(0,62,90);
+}
+footer table {
+    color: #f0f0f0;
+}
+
+div.nd_not_ready {
+    font-weight: bold;
+    color: black;
+    background-color: #ffe0e0;
+}
+
+div#person_search_div,
+div#keyword_search_div {
+    position: relative;
+    font-size: 150%;
+    text-align: center;
+    width: 80%;
+    left: 10%;
+}
+div#person_search_div input,
+div#person_search_div select {
+    font-size: 140%;
+}
+div#person_search_div a {
+    font-size: 140%;
+}
+
+span.picker_selector_nonempty,
+select.picker_selector_nonempty {
+    animation: fadeIn 0.5s;
+    opacity: 1;
+}
+span.picker_selector_empty,
+select.picker_selector_empty {
+    animation: fadeOut 0.5s;
+    opacity: 0;
+}
+
+div#division_search_div,
+div#area_search_div {
+    position: relative;
+    font-size: 125%;
+    text-align: center;
+    width: 60%;
+    left: 20%;
+}
+
+div#division_search_div input,
+div#area_search_div input {
+    display: none;
+}
+
+
+table.hr_data_table {
+    margin: auto;
+    /* border: 1px solid black; */
+    border-collapse: separate;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+table.hr_data_table tr {
+    vertical-align: top;
+}
+table.hr_data_table td {
+    /* border: 1px solid red; */
+}
+
+span.hr_user_full_name {
+    font-size: 200%;
+}
+a.hr_user_email {
+    font-size: 125%;
+}
+
+div.pubs_header {
+    width: 80%;
+    background-color: #f0f0f0;
+    font-size: 150%;
+    font-weight: bold;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+div.research_statement {
+    width: 80%;
+    background-color: #f0f0f0;
+    margin: auto;
+}
+
+
+table.pubs_table,
+table.highlighted_pubs_table,
+table.professional_table,
+table.appointments_table,
+table.jobs_table,
+table.degrees_table,
+table.websites_table
+{
+    width: 80%;
+    background-color: #f0f0f0;
+}
+
+
+div.person_table_header {
+    font-size: 150%;
+    font-weight: bold;
+    width: 50%;
+    margin: auto;
+    text-align: center;    
+    padding: 30px;
+}
+
+table.group_subgroup_list {
+    background-color: #f0f0f0;
+    text-align: left;
+    margin: auto;
+    border: 0px;
+}
+
+div.group_top_name_div {
+    font-size: 150%;
+    font-weight: bold;
+    margin: auto;
+    text-align: left;    
+}
+div.group_second_name_div {
+    font-size: 125%;
+    margin: auto;
+    text-align: left;    
+}
+
+
+div.tabsdiv {
+    margin-left : 10%;
+    width: 90%;
+}
+
+div.tabdiv {
+    background-color: gray;
+    border: 10px;
+    padding: 10px;
+    border: 5px solid rgb(240,240,240);
+    display: inline-block;
+}
+
+div.tabdiv.active {
+    background-color: rgb(0,62,90);
+    color: rgb(240,240,240);
+}
+
+div.tabdiv:hover {
+    filter: brightness(150%);
+}
+
+div.contentcontainer {
+    width: 90%;
+}
+
+div.contentdiv {
+    padding-top: 50px;
+}
+
+
+table.group_header_table {
+    margin: auto;
+    /* border: 1px solid black; */
+    border-collapse: separate;
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+table.group_header_table tr {
+    vertical-align: top;
+    text-align: left;
+}
+table.group_header_table td {
+    /* border: 1px solid black; */
+    padding-top: 20px;
+    text-align: left;
+}
+
+div.division_overview {
+    width: 70%;
+    margin-left: 10%;
+}
+
+div.wait_box {
+    position: absolute;
+    width: 20%;
+    left: 40%;
+    top: 45%;
+    border: 2px solid rgb(0,62,90);
+    background-color: #ffffff;
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.phone_number {
+    margin-top: 10px;
+    font-size: 75%;
+}
+
+div.mailing_address {
+    margin-top: 10px;
+    font-size: 75%;
+}
+
+div.kw_search_div {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 25%;
+    width: 50%;
+}
+div.kw_search_div input,
+div.kw_search_div span {
+    font-size: 140%;
+}
+
+div.abstract_div {
+}
+span.abstract_controller {
+}
+div.abstract_controlled {
+    font-size: 70%;
+    transition: opacity 0.25s linear;                                           
+    transition: height 0.25s linear;                                            
+    z-index: 10;                                                                
+    margin-left: 40px;
+}
+
+span.highlight_keyword_match {
+    color: red;
+    font-weight: bold;
+}

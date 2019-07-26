@@ -1,0 +1,16 @@
+div.division_data {
+    background-color: white;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    border: 3px solid green;
+    padding: 20px;
+    display: none;
+    z-index: 2;
+    overflow-x: none;
+    overflow-y: scroll;
+}
+
+

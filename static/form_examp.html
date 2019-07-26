@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>A Test Form</title>
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/form_base.css">
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/form_examp.css">
+    </head>
+    <body>
+        <div>
+            <p>This page contains an experimental self-submitting form.</p>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum malesuada erat eu iaculis. Vivamus velit metus, luctus vitae enim ac, consectetur sodales eros. Etiam ex tortor, eleifend eu ornare in, faucibus efficitur neque. Aliquam erat volutpat. Aenean imperdiet sapien eu lorem lobortis, id posuere enim efficitur. Morbi pharetra feugiat tellus nec bibendum. Donec cursus suscipit dui.
+            </p>
+        </div>
+        <div id="form_target"></div>
+        <div>
+            </p>
+            Curabitur tortor dui, eleifend eget ligula et, pellentesque ullamcorper massa. Nam commodo elit neque, commodo tempor tellus consectetur a. Sed nec luctus orci. Aliquam sed convallis est. Integer pharetra diam et pulvinar ultricies. Donec interdum diam sed elit rhoncus congue. Morbi a viverra justo. Aliquam arcu arcu, fringilla at tellus at, semper vulputate enim. Maecenas magna est, tempus et ex in, tempus porta nisl. Sed in mollis ligula. Vivamus vel libero id lacus malesuada ultricies.
+            </p>
+        </div>
+        <script type="text/javascript" src="/scout/app/static/shared.js"></script>
+        <script type="text/javascript" src="/scout/app/static/formalizer_client.js"></script>
+        <script type="text/javascript">
+            var f = new Formalizer(gebi('form_target'), 'test0', '/scout/form');
+            f.init((err,res) => {
+                if (err) console.error(err);
+            });
+        </script>
+    </body>
+</html>
+

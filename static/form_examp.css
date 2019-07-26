@@ -1,0 +1,11 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #101050;
+    color: #e0e0e0;
+}
+div#form_target {
+    margin: auto;
+    width: 50%;
+    padding: 5px;
+    border: 5px solid #101090;
+}

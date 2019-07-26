@@ -1,0 +1,10 @@
+{
+    "qa": {
+        "user": "SOME_USER",
+         "pw": "SOME_PASSWORD"
+    },
+    "prod": {
+        "user": "SOME_USER",
+         "pw": "SOME_PASSWORD"
+    }
+}

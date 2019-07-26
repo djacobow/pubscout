@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>PubScout System Status</title>
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/base.css">
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/scout.css">
+    </head>
+    <body>
+        <div id="wait_box" class="wait_box">Just a moment...</div>
+        <input id="starting_search" type="hidden" value="___null_search___">
+        <header>
+            <div id="banner">
+                <table class="banner">
+                    <tr>
+                        <td rowspan="2"><img class="logo_png" src="/scout/app/static/lab_logo.png"></td>
+                        <td class="logo_text_1">PubScout</td>
+                    </tr>
+                    <tr>
+                        <td class="logo_text_2">Publications Tracker</td>
+                    </tr>
+                </table>
+            </div>
+        </header>
+        <main>
+            <div id="status_div"></div>
+        </main>
+
+        <script type="text/javascript" src="/scout/app/static/shared.js"></script>
+        <script type="text/javascript">
+            var makeStatsTable = function(stats) {
+                var t = cr('table');
+                var tr = cr('tr');
+                var td0 = cr('th',null,'File');
+                var td1 = cr('th',null,'Modify Time');
+                appendChildren(tr,[td0,td1]);
+                t.appendChild(tr);
+                Object.keys(stats).forEach((fn) => {
+                    tr = cr('tr');
+                    td0 = cr('td',null,fn);
+
+                    var dt = new Date(stats[fn].mtimeMs);
+                    var s  = [dt.toLocaleDateString(),dt.toLocaleTimeString()].join(' ');
+                    td1 = cr('td',null,s);
+                    appendChildren(tr,[td0,td1]);
+                    t.appendChild(tr);
+                });
+                return t;
+            }
+            GetJS('/scout/api/v1/fstats',(err,data) => {
+                if (!err && !data.err && data.fstats) {
+                    t = makeStatsTable(data.fstats);
+                    document.getElementById('status_div').appendChild(t);
+                } else {
+                    console.log(err,data);
+                }
+            });
+        </script>
+    </body>
+</html>
+

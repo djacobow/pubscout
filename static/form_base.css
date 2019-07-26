@@ -1,0 +1,36 @@
+
+div.form_container {
+    background-color: #d0d0d0;
+}
+table.form_table { 
+    width: 100%;
+    align: left;
+    vertical-align: top;
+    color: #101010;
+}
+tr.form_row:nth-child(even) {
+    background: #d8d0d0;
+}
+tr.form_row:nth-child(odd) {
+    background: #c8d0d0;
+}
+
+td.form_label_td {
+    width: 25%;
+}
+div.form_status {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+
+div.form_data_not_valid {
+    background-color: #e0e0b0;
+}
+div.form_data_saved {
+    background-color: #c0e0c0;
+}
+div.form_data_save_failed {
+    background-color: #e0c0c0;
+}
+

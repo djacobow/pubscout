@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Berkeley Lab Profiles</title>
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/base.css">
+        <link rel="stylesheet" type="text/css" href="/scout/app/static/profile.css">
+        <meta name="robots" content="index,follow">
+        <meta name="description" content="Profiles for LBNL Users, Divisions, and Areas">
+        <meta name="keywords" content="LBL,LBNL,Berkeley Lab, Lawrence Berkeley National Lab, Profile">
+    </head>
+    <body>
+        <noscript>
+            <div class="no_script">
+                We're sorry, Javascript is required to use this site.
+            </div>
+        </noscript>
+        <input id="starting_search" type="hidden" value="___null_search___">
+        <div id="wait_box" class="wait_box">Just a moment...</div>
+        <header>
+            <div id="banner">
+                <table class="banner">
+                    <tr>
+                        <td><img class="logo_png" src="/scout/app/static/lab_logo.png"></td>
+                        <td class="logo_text_1">Researcher Profiles</td>
+                    </tr>
+                </table>
+            </div>
+        </header>
+        <main>
+            <div id="info_div"></div>
+            <div id="everything_container"></div>
+        </main>
+        <footer>
+            <div id="footer">
+                <table width="100%">
+                    <tr>
+                        <td style="text-align: left;">&copy;2018-19 Lawrence Berkeley National Laboratory</td>
+                        <td style="text-align: right;">Questions / Issues? Contact <a href="mailto:publications@lbl.gov">publications@lbl.gov</a></td>
+                    </tr>
+                </table>
+        </footer>
+        <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+        <script type='text/javascript' src='https://badge.dimensions.ai/badge.js'></script>
+        <script type="text/javascript" src="/scout/app/static/shared.js"></script>
+        <script type="text/javascript" src="/scout/app/static/tabbedcontent.js"></script>
+        <script stype="text/javascript">
+            var global_entity_name = 'Division';
+            var global_entity_type = 'division';
+            var addl_to_load = ['profile_group.js'];
+            var path = window.location.pathname;
+            if (path.match(/\/area/)) {
+                global_entity_name = 'Area';
+                global_entity_type = 'area';
+            } else if (path.match(/\/user/)) {
+                global_entity_name = 'User';
+                global_entity_type = 'user';
+                addl_to_load = ['bagtodom.js','multilistifier.js','profile_person.js'];
+            } else if (path.match(/\/kw/)) {
+                global_entity_name = 'Search';
+                global_entity_type = 'search';
+                addl_to_load = ['bagtodom.js','multilistifier.js','profile_search.js'];
+            }
+            var m = path.match(/(?:division|area|user|kw)\/([\w\.-]+)\/?$/);
+            if (m) document.getElementById('starting_search').value = m[1];
+
+            jsLoad(addl_to_load.map(
+                (i) => { 
+                    return '/scout/app/static/' + i;
+                }), (err) => {
+                    init();
+                }
+            );
+
+
+        </script>
+    </body>
+</html>
+
